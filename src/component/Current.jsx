@@ -6,7 +6,7 @@ const Current = () => {
   
   const current = useSelector(state => state.current)
 
-  let ctemp = current.main.temp-273;
+  let ctemp = current?.main.temp-273;
 
 
 

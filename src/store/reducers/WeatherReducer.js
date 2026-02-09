@@ -25,6 +25,8 @@ const WeatherReducer = (state = initiolState, action) => {
           return {
                ...state,
                loading:false,
+               current:null,
+               forcast:null,
                error:action.payload,
           }
      }else if(action.type === SET_CITY){

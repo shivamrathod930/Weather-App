@@ -10,9 +10,9 @@ const ForCast = () => {
                     <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">30 day ForCast Weather</li>
 
                     {
-                         forcast?.list.map((item) => {
+                         forcast?.list.map((item,index) => {
                               let ctem = item?.main.temp - 273
-                              return <li className="list-row">
+                              return <li key={index} className="list-row">
                                    <div>
                                         <div >City : {forcast?.city.name}</div>
 
