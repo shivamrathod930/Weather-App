@@ -1,8 +1,15 @@
 import { useSelector } from 'react-redux'
+import Loadar from './Loadar'
 
 const ForCast = () => {
      const forcast = useSelector(state => state.forcast)
+     const loading = useSelector(state=>state.loading)
 
+
+     if (loading) {
+          return <Loadar/>
+     }else{
+          
      return (
           <>
                <ul className="list bg-base-100 rounded-box shadow-md">
@@ -29,6 +36,7 @@ const ForCast = () => {
                </ul>
           </>
      )
+}
 }
 
 export default ForCast
