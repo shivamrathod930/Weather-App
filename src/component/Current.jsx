@@ -22,8 +22,9 @@ const Current = () => {
 
         <li className="list-row">
           <div>
-            <div className='text-xl'>humidity : {current?.main.humidity}</div>
-            <div className='text-pink-700 text-xl'>temp : {ctemp?.toFixed(2)} °C</div>
+            <div className='text-xl'>humidity : {current?.main.humidity} %</div>
+            <div className='text-xl'>Weather : {current?.weather[0].description}</div>
+            <div className='text-pink-700 text-xl'>temp : {ctemp?.toFixed(1)} °C</div>
           </div>
         </li>
 

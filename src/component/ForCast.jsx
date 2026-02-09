@@ -5,11 +5,12 @@ const ForCast = () => {
      const forcast = useSelector(state => state.forcast)
      const loading = useSelector(state=>state.loading)
 
+     console.log(forcast)
 
      if (loading) {
           return <Loadar/>
      }else{
-          
+
      return (
           <>
                <ul className="list bg-base-100 rounded-box shadow-md">
@@ -22,12 +23,14 @@ const ForCast = () => {
                               return <li key={index} className="list-row">
                                    <div>
                                         <div >City : {forcast?.city.name}</div>
+                                        <div className='text-sky-500'>Weather : {item?.weather[0].main}</div>
 
                                         <div className='text-amber-500'>date : {item?.dt_txt} </div>
 
                                         <div className='text-emerald-500'>country : {forcast?.city.country}</div>
-                                        <div className='text-sky-500'>humidity : {item?.main.humidity}</div>
-                                        <div className='text-sky-500'>temp : {ctem.toFixed(2)} °C</div>
+                                        <div className='text-sky-500'>humidity : {item?.main.humidity} %</div>
+                                        
+                                        <div className='text-sky-500'>temp : {ctem.toFixed(1)} °C</div>
                                    </div>
                               </li>
                          })
